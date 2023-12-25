@@ -57,8 +57,6 @@ export const DocumentList = ({
         )
     }
 
-    console.log('xxx level', { level });
-
     return (
         <>
             <p 
