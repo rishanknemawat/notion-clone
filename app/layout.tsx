@@ -4,8 +4,9 @@ import { Toaster } from 'sonner'
 
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { ConvexClientProvider } from '@/components/providers/concex.provider'
+import { ModalProvider } from '@/components/providers/modal-provider'
+
 import './globals.css'
-import { SearchCommand } from '@/components/search-command'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -45,7 +46,7 @@ export default function RootLayout({
             storageKey='notion-clone-1'
           >
             <Toaster position='bottom-center'/>
-            <SearchCommand />
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>
