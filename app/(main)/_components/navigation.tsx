@@ -11,10 +11,12 @@ import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
 
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+
 import { UserItem } from "./user-item";
 import { Item } from "./item";
 import { DocumentList } from "./document-list";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { TrashBox } from "./trash-box";
 
 export const Navigation = () => {
     const pathname = usePathname();
@@ -162,7 +164,7 @@ export const Navigation = () => {
                             side={isMobile ? "bottom" : "right"}
                             className="p-0 w-72"
                         >
-                            Trash Box
+                            <TrashBox />
                         </PopoverContent>
                     </Popover>
                 </div>
