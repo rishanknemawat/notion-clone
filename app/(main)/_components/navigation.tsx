@@ -5,19 +5,19 @@ import { ChevronsLeft, MenuIcon, PlusCircle, Search, Settings } from "lucide-rea
 import { useMediaQuery } from "usehooks-ts";
 
 import { usePathname } from "next/navigation";
-import { useMutation, useQuery } from "convex/react";
+import { toast } from "sonner";
+import { useMutation } from "convex/react";
 
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
 
 import { UserItem } from "./user-item";
 import { Item } from "./item";
-import { toast } from "sonner";
+import { DocumentList } from "./document-list";
 
 export const Navigation = () => {
     const pathname = usePathname();
     const isMobile = useMediaQuery("(max-s̄width: 768px)");
-    const documents = useQuery(api.documents.get, {});
     const create = useMutation(api.documents.create);
 
     const isResizingRef = useRef(false);
@@ -144,13 +144,7 @@ export const Navigation = () => {
                     />
                 </div>
                 <div className="mt-4">
-                    {documents?.map(doc => {
-                        return (
-                            <p key={doc._id}>
-                                {doc.title}
-                            </p>
-                        );
-                    })}
+                    <DocumentList />
                 </div>
                 <div
                     onMouseDown={handleMouseDown}
