@@ -1,8 +1,8 @@
 "use client";
 
 import { ChevronsLeftRight } from "lucide-react";
+import { SignOutButton, useUser } from "@clerk/clerk-react";
 
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { 
     DropdownMenu, 
     DropdownMenuContent,
@@ -11,7 +11,7 @@ import {
     DropdownMenuItem,
     DropdownMenuLabel
 } from "@/components/ui/dropdown-menu";
-import { SignOutButton, useUser } from "@clerk/clerk-react";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 export const UserItem = () => {
     const { user } = useUser();
@@ -48,7 +48,7 @@ export const UserItem = () => {
                         </div>
                         <div className="space-y-1">
                             <p className="text-sm line-clamp-1">
-                                {user?.fullName || user?.username}&apos;s Jotion
+                                {user?.fullName || user?.username}&apos;s Notion
                             </p>
                         </div>
                     </div>
