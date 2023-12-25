@@ -30,7 +30,7 @@ interface ItemProps {
     expanded?: boolean;
     level?: number;
     onExpand?: () => void;
-    onClick: () => void;
+    onClick?: () => void;
 }
 
 export const Item = ({
