@@ -22,11 +22,11 @@ export const ConfirmModal = ({
     onConfirm
 }: ConfirmModalProps) => {
     const handleConfirm = (
-        event: React.MouseEvent<HTMLDivElement, MouseEvent>
-    ) => {
-        event.stopPropagation();
+        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+      ) => {
+        e.stopPropagation();
         onConfirm();
-    }
+      };
 
     return (
         <AlertDialog>
