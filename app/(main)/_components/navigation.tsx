@@ -4,7 +4,7 @@ import { ElementRef, useEffect, useRef, useState } from "react";
 import { ChevronsLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from "lucide-react";
 import { useMediaQuery } from "usehooks-ts";
 
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useMutation } from "convex/react";
 
@@ -28,6 +28,7 @@ export const Navigation = () => {
     const create = useMutation(api.documents.create);
     const search = useSearch();
     const settings = useSettings();
+    const route = useRouter();
 
     const isResizingRef = useRef(false);
     const sidebarRef = useRef<ElementRef<'aside'>>(null);
@@ -105,7 +106,11 @@ export const Navigation = () => {
     }
 
     const handleCreate = () => {
-        const promise = create({ title: "Untitled" });
+        const promise = create({ title: "Untitled" })
+                .then((documentId: string) => {
+                    route.push(`/documents/${documentId}`);
+                });
+
         toast.promise(promise, {
             loading: "Creating new note...",
             success: "New note successfully created.",

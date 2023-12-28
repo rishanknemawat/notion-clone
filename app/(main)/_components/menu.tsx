@@ -31,7 +31,8 @@ export const Menu = ({
     const archieve = useMutation(api.documents.archieve);
 
     const onArchieve = () => {
-        const promise = archieve({ id: documentId });
+        const promise = archieve({ id: documentId })
+            .then(() => router.push('/documents'));;
         toast.promise(promise, {
             loading: "Moving to trash...",
             success: "Note successfully moved to trash.",

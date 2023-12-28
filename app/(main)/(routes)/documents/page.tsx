@@ -9,13 +9,18 @@ import { toast } from "sonner";
 import { useUser } from "@clerk/clerk-react";
 import { api } from "@/convex/_generated/api";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const DocumentsPage = () => {
     const { user } = useUser();
+    const route = useRouter();
     const create = useMutation(api.documents.create);
 
     const onCreate = () => {
-        const promise = create({ title: "Untitled" });
+        const promise = create({ title: "Untitled" })
+            .then((documentId: string) => {
+                route.push(`/documents/${documentId}`);
+            });
         toast.promise(promise, {
             loading: "Creating a new note...",
             success: "New note successfully created.",
