@@ -114,7 +114,7 @@ export const Item = ({
                 </div>
             ) : (
                 <Icon 
-                    className="shrink-0 text-muted-foreground h-[18px] mr-2" 
+                    className="shrink-0 text-muted-foreground h-[18px] w-[18px] mr-2" 
                 />
             )
             }

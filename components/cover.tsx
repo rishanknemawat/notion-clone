@@ -16,7 +16,7 @@ import { Button } from "./ui/button";
 import { Skeleton } from "./ui/skeleton";
 interface CoverProps {
     url?: string; 
-    preview?: string;
+    preview?: boolean;
 };
 
 export const Cover = ({
