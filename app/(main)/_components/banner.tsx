@@ -51,7 +51,7 @@ export const Banner = ({
                 size={"sm"}
                 variant={"outline"}
                 className="bg-transparent border-white hover:bg-primary/5
-                text-white hover:text-white p-1 px-2 h-auto font-normal"
+                text-white hover:text-white p-1 px-2 h-[27px] font-normal"
             >
                 Restore
             </Button>
@@ -60,7 +60,7 @@ export const Banner = ({
                     size={"sm"}
                     variant={"outline"}
                     className="bg-transparent border-white hover:bg-primary/5
-                    text-white hover:text-white p-1 px-2 h-auto font-normal"
+                    text-white hover:text-white p-1 px-2 h-[27px] font-normal"
                 >
                     Delete
                 </Button>

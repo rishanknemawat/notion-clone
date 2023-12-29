@@ -21,10 +21,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useUser } from "@clerk/clerk-react";
 interface ItemProps {
-    id?: Id<"documents">;
     label: string;
-    documentIcon?: string;
     icon: LucideIcon;
+    id?: Id<"documents">;
+    documentIcon?: string;
     isSearch?: boolean;
     active?: boolean;
     expanded?: boolean;

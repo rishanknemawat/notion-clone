@@ -21,7 +21,10 @@ export const Navbar = () => {
             <Logo />
             <div className="md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2">
                 {isLoading && (
-                    <Spinner />
+                    <>
+                        <Spinner />
+                        <ModeToggle />
+                    </>
                 )}
                 {!isAuthenticated && !isLoading && (
                     <>
@@ -35,6 +38,7 @@ export const Navbar = () => {
                                 Get Note Creator Free
                             </Button>
                         </SignInButton>
+                        <ModeToggle />
                     </>
                 )}
                 {isAuthenticated && !isLoading && (
@@ -42,10 +46,12 @@ export const Navbar = () => {
                         <Button variant={'ghost'} size={'sm'} asChild>
                             <Link href={'/documents'}>Enter Note Creator</Link>
                         </Button>
-                        <UserButton afterSignOutUrl="/" />
+                        <span className="flex flex-row justify-end gap-x-2">
+                            <UserButton afterSignOutUrl="/" />
+                            <ModeToggle />
+                        </span>
                     </>
                 )}
-                <ModeToggle />
             </div>
         </div>
     );
