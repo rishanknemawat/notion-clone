@@ -15,7 +15,7 @@ export const Navbar = () => {
     const scrolled = useScrollTop();
     return (
         <div className={cn(
-            "z-50 bg-background dark:bg-[#1F1F1F] fixed top-0 flex items-center w-full p-6",
+            "z-50 bg-background dark:bg-[#1F1F1F] fixed top-0 flex items-center w-full p-4",
             scrolled && "border-b shadow-sm"
         )}>
             <Logo />
@@ -32,7 +32,7 @@ export const Navbar = () => {
                         </SignInButton>
                         <SignInButton mode="modal">
                             <Button size={'sm'}>
-                                Get Notion Free
+                                Get Note Creator Free
                             </Button>
                         </SignInButton>
                     </>
@@ -40,7 +40,7 @@ export const Navbar = () => {
                 {isAuthenticated && !isLoading && (
                     <>
                         <Button variant={'ghost'} size={'sm'} asChild>
-                            <Link href={'/documents'}>Enter Notion</Link>
+                            <Link href={'/documents'}>Enter Note Creator</Link>
                         </Button>
                         <UserButton afterSignOutUrl="/" />
                     </>

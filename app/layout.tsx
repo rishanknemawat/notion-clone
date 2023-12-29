@@ -12,7 +12,7 @@ import { EdgeStoreProvider } from '@/lib/edgestore'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Notion Clone',
+  title: 'Note Creater',
   description: 'Collaboratory workspace for better and faster work!',
   icons: {
     icon: [
@@ -45,7 +45,7 @@ export default function RootLayout({
               defaultTheme='system'
               enableSystem
               disableTransitionOnChange
-              storageKey='notion-clone-1'
+              storageKey='note-creator'
             >
               <Toaster position='bottom-center'/>
               <ModalProvider />

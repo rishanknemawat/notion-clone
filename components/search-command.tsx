@@ -60,7 +60,7 @@ export const SearchCommand = () => {
             onOpenChange={onClose}
         >
             <CommandInput
-                placeholder={`Search ${user?.fullName || user?.username}'s Notion`}
+                placeholder={`Search ${user?.fullName || user?.username}'s Note Creator`}
             />
             <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>
