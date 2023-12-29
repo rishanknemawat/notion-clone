@@ -1,7 +1,7 @@
 "use client";
 
-import { redirect } from "next/navigation";
 import { useConvexAuth } from "convex/react";
+import { redirect } from "next/navigation";
 
 import { SearchCommand } from "@/components/search-command";
 import { Spinner } from "@/components/spinner";

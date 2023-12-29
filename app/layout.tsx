@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Toaster } from 'sonner'
 
+import { EdgeStoreProvider } from '@/lib/edgestore'
+
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { ConvexClientProvider } from '@/components/providers/concex.provider'
 import { ModalProvider } from '@/components/providers/modal-provider'
-
 import './globals.css'
-import { EdgeStoreProvider } from '@/lib/edgestore'
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -1,4 +1,4 @@
-const PublicLayoutc = ({ children }: {
+const PublicLayout = ({ children }: {
     children: React.ReactNode;
 }) => {
     return (
@@ -8,4 +8,4 @@ const PublicLayoutc = ({ children }: {
     );
 }
  
-export default PublicLayoutc;
+export default PublicLayout;

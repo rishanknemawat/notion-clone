@@ -1,25 +1,44 @@
 "use client";
 
-import { ElementRef, useEffect, useRef, useState } from "react";
-import { ChevronsLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from "lucide-react";
-import { useMediaQuery } from "usehooks-ts";
+import { 
+    useState,
+    useEffect,
+    useRef,
+    ElementRef,
+} from "react";
 
 import { useParams, usePathname, useRouter } from "next/navigation";
-import { toast } from "sonner";
 import { useMutation } from "convex/react";
+import { toast } from "sonner";
+import { useMediaQuery } from "usehooks-ts";
 
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
 
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { 
+    ChevronsLeft, 
+    MenuIcon, 
+    Plus, 
+    PlusCircle, 
+    Search, 
+    Settings, 
+    Trash 
+} from "lucide-react";
+
 import { useSearch } from "@/hooks/use-search";
 import { useSettings } from "@/hooks/use-settings";
 
-import { Navbar } from "./navbar";
-import { UserItem } from "./user-item";
-import { Item } from "./item";
+import { 
+    Popover, 
+    PopoverContent, 
+    PopoverTrigger
+} from "@/components/ui/popover";
+
 import { DocumentList } from "./document-list";
+import { Item } from "./item";
+import { Navbar } from "./navbar";
 import { TrashBox } from "./trash-box";
+import { UserItem } from "./user-item";
 
 export const Navigation = () => {
     const pathname = usePathname();

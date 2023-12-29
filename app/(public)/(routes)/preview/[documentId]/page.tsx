@@ -2,12 +2,11 @@
 
 import { useMemo } from "react";
 import dynamic from "next/dynamic";
-
 import { useMutation, useQuery } from "convex/react";
+
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 
-// import Editor from "@/components/editor";
 import Toolbar from "@/components/toolbar";
 import { Cover } from "@/components/cover";
 import { Skeleton } from "@/components/ui/skeleton";

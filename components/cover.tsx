@@ -8,12 +8,14 @@ import { ImageIcon, X } from "lucide-react";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 
-import { useCoverImage } from "@/hooks/use-cover-image";
 import { useEdgeStore } from "@/lib/edgestore";
-
 import { cn } from "@/lib/utils";
+
+import { useCoverImage } from "@/hooks/use-cover-image";
+
 import { Button } from "./ui/button";
 import { Skeleton } from "./ui/skeleton";
+
 interface CoverProps {
     url?: string; 
     preview?: boolean;

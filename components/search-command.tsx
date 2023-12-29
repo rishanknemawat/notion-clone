@@ -9,6 +9,7 @@ import { useUser } from "@clerk/clerk-react";
 import { api } from "@/convex/_generated/api";
 
 import { useSearch } from "@/hooks/use-search";
+
 import { 
     CommandDialog,
     CommandEmpty,

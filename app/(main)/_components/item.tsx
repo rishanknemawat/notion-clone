@@ -1,17 +1,26 @@
 "use client";
 
 import React from "react";
+
 import { useRouter } from "next/navigation";
-import { ChevronDown, ChevronRight, LucideIcon, MoreHorizontal, Plus, Trash } from "lucide-react";
+import { useMutation } from "convex/react";
 import { toast } from "sonner";
 
-import { useMutation } from "convex/react";
-
+import { useUser } from "@clerk/clerk-react";
 import { Id } from "@/convex/_generated/dataModel";
 import { api } from "@/convex/_generated/api";
+
 import { cn } from "@/lib/utils";
 
-import { Skeleton } from "@/components/ui/skeleton";
+import {
+    ChevronDown,
+    ChevronRight,
+    LucideIcon,
+    MoreHorizontal,
+    Plus,
+    Trash
+} from "lucide-react";
+
 import { 
     DropdownMenu,
     DropdownMenuTrigger,
@@ -19,7 +28,8 @@ import {
     DropdownMenuItem,
     DropdownMenuSeparator
 } from "@/components/ui/dropdown-menu";
-import { useUser } from "@clerk/clerk-react";
+import { Skeleton } from "@/components/ui/skeleton";
+
 interface ItemProps {
     label: string;
     icon: LucideIcon;
